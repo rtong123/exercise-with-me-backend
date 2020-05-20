@@ -1,6 +1,13 @@
 class RoutinesController < ApplicationController
 
   def create
+    @routine = Routine.new(routine_params)
+    if @routine.save
+        render json: @routine
+        # if it exists, then render json and send over the newly created
+      else
+        render json: {error: 'Error creating routine'}
+      end
   end
 
   def index
@@ -11,9 +18,11 @@ class RoutinesController < ApplicationController
 
 
   def show
+    @routine = Routine.find(params[:id])
   end
 
   def destroy
+    
   end
 
   private
