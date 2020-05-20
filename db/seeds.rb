@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+routine = Routine.create(title: 'Back Routine', start_date: Date.today, days: 'Monday,Wednesday,Friday', body_weight: 170)
+exercise = Exercise.create(name: 'deadlift', type_of_exercise: 'push', equipment: 'barbell', routine_id: 1, reps: 10, sets:4)
