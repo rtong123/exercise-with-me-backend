@@ -1,16 +1,21 @@
 class ExercisesController < ApplicationController
   def create
     # create an exercise, attach it with routine id.
+    @exercise = Exercise.new(exercise_params)
+    @exercise.save
+    render json: @exercise
   end
 
   def index
-
+    @exercises = Exercise.all
     # fetch request for all exercises
   end
 
 
   def show
-
+    @exercise = Exercise.find(params[:id])
+    @exercise.update(exercise_params)
+    render json: @exercise
   end
 
   def destroy
