@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 routine = Routine.create(title: 'Back Routine', start_date: Date.today, days: 'Monday,Wednesday,Friday', body_weight: 170)
-exercise = Exercise.create(name: 'deadlift', type_of_exercise: 'push', equipment: 'barbell', routine_id: 1, reps: 10, sets:4)
+exercise = Exercise.create(name: 'deadlift', type_of_exercise: 'pull', equipment: 'barbell', routine_id: 1, reps: 10, sets:4)
+exercise_two = Exercise.create(name: 'rows', type_of_exercise: 'pull', equipment: 'dumbbell', routine_id: 1, reps: 10, sets:4)
