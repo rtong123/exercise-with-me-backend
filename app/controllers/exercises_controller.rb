@@ -9,17 +9,19 @@ class ExercisesController < ApplicationController
   def index
     @exercises = Exercise.all
     # fetch request for all exercises
+    render json:@exercises
   end
 
 
-  def show
-    @exercise = Exercise.find(params[:id])
+  def update
+    @exercise = Exercise.find_by(id: params[:id])
     @exercise.update(exercise_params)
     render json: @exercise
   end
 
   def destroy
-
+    @exercise = Routine.find(params[:id])
+    @exercise.destroy
   end
 
   private
