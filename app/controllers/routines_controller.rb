@@ -12,7 +12,7 @@ class RoutinesController < ApplicationController
 
   def index
     @routines = Routine.all
-    render json: @routines
+    render json: @routines, include: ['exercises']
     # fetch request for all routines
   end
 
