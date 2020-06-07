@@ -2,6 +2,7 @@ class ExercisesController < ApplicationController
   def create
     # create an exercise, attach it with routine id.
     @exercise = Exercise.new(exercise_params)
+    @exercise.routine = Routine.find_by(id: params[:routine_id])
     @exercise.save
     render json: @exercise
   end
