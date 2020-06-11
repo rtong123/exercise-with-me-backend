@@ -25,8 +25,9 @@ class ExercisesController < ApplicationController
   end
 
   def destroy
-    @exercise = Routine.find(params[:id])
+    @exercise = Exercise.find_by(id: params[:id])
     @exercise.destroy
+    render json: @exercise
   end
 
   private
