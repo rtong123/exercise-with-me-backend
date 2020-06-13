@@ -40,7 +40,7 @@ module ExerciseWithMeBackend
           resource(
             '*',
             headers: :any,
-            methods: [:get, :patch, :put, :delete]
+            methods: [:get, :patch, :put, :delete, :post]
             )
           end
         end
