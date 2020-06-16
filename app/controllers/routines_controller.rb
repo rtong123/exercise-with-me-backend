@@ -26,6 +26,7 @@ class RoutinesController < ApplicationController
   def destroy
     @routine = Routine.find(params[:id])
     @routine.destroy
+    render json: @routine
   end
 
   private
