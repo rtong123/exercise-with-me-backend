@@ -22,6 +22,13 @@ class RoutinesController < ApplicationController
     render json: @routine
   end
 
+  def update
+    @routine = Routine.find_by(id: params[:id])
+    @routine.update(routine_params)
+    @routine.save
+    render json: @routine, include: ['exercises']
+  end
+
 
   def destroy
     @routine = Routine.find(params[:id])
